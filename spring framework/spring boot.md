@@ -322,3 +322,57 @@ Spring Boot does not replace Spring.
 
 It makes Spring easier.
 
+## 7. How Spring Boot Works?
+
+Spring Boot works mainly using:
+
+### 1. Auto Configuration
+
+It automatically configures things based on dependencies.
+
+#### Example
+
+If you add:
+
+```text
+spring-boot-starter-web
+```
+
+Spring Boot understands:
+
+> This is a web application.
+
+So it automatically configures:
+
+* Tomcat server
+* Spring MVC
+* JSON converter
+* REST API support
+
+---
+
+### 2. Starter Dependencies
+
+Instead of adding many dependencies one by one, Spring Boot gives starters.
+
+#### Example
+
+```text
+spring-boot-starter-web
+```
+
+This includes many libraries needed for web development.
+
+---
+
+### 3. Embedded Server
+
+In normal Spring, we deploy WAR file to external Tomcat.
+
+In Spring Boot, Tomcat is already inside the application.
+
+So we can run it directly:
+
+```bash
+java -jar app.jar
+```
