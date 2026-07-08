@@ -1,35 +1,64 @@
-# 5. What is Spring Boot?
+# Now Spring Boot
 
-## Definition
+## 1. What is Spring Boot?
 
-**Spring Boot** is built **on top of the Spring Framework**.
+Spring Boot is built on top of Spring.
 
-It simplifies Spring application development by reducing the amount of configuration required.
+Spring Boot makes Spring easier to use.
 
----
+### Simple meaning:
 
-## Simple Meaning
+Spring Boot helps us create Spring applications quickly with minimum configuration.
 
-> **Spring Boot helps us build Spring applications quickly with minimum configuration.**
 
-Instead of spending time configuring the project, developers can focus on writing business logic.
+## 2. Why Spring Boot?
 
----
+Spring is powerful, but earlier it needed a lot of setup.
 
-## Why Was Spring Boot Introduced?
+### Before Spring Boot, we had to configure:
 
-Although Spring is a powerful framework, it required a lot of manual configuration before Spring Boot.
+* XML files
+* Tomcat server
+* DispatcherServlet
+* Dependency versions
+* Database setup
+* MVC configuration
 
-Spring Boot was introduced to:
+Spring Boot reduces this manual setup.
 
-* ✅ Reduce configuration
-* ✅ Reduce boilerplate code
-* ✅ Simplify project setup
-* ✅ Increase developer productivity
-* ✅ Make applications easier to run and deploy
 
----
+### 1. XML files
 
-## Key Takeaway
+#### What?
 
-> **Spring Boot is an extension of Spring that makes developing Spring applications faster and easier by providing sensible defaults and reducing manual configuration.**
+Earlier Spring projects used XML files to tell Spring:
+
+* Which classes should be created as objects?
+
+#### Example (Old-style XML)
+
+```xml
+<bean id="userService" class="com.example.UserService" />
+<bean id="userRepository" class="com.example.UserRepository" />
+```
+
+**This means:**
+
+> Spring, please create objects for UserService and UserRepository.
+
+#### Why was it difficult?
+
+For many classes, XML becomes large and hard to maintain.
+
+#### How Spring Boot helps?
+
+Now we use annotations.
+
+```java
+@Service
+public class UserService {
+}
+```
+
+Spring Boot scans and creates the object automatically.
+
