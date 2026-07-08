@@ -147,3 +147,68 @@ In the above example, the `UserService` object is a **Spring Bean**.
 
 > **Spring works by using the IoC Container to automatically create, manage, and inject objects (Beans), reducing manual object creation and making applications easier to maintain.**
 
+# 4. What is Dependency Injection (DI)?
+
+## What is a Dependency?
+
+A **dependency** is an object that another class needs to perform its work.
+
+In simple terms:
+
+> **If one class uses another class, the second class is called its dependency.**
+
+---
+
+## Example
+
+```java
+@Service
+public class UserService {
+
+    private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+}
+```
+
+---
+
+## What's Happening Here?
+
+* `UserService` needs `UserRepository` to access user data.
+* Therefore, `UserRepository` is a **dependency** of `UserService`.
+* Instead of creating the object manually using `new UserRepository()`, Spring provides it automatically.
+
+---
+
+## What is Dependency Injection?
+
+**Dependency Injection (DI)** is the process of **providing the required dependency to a class instead of letting the class create it itself**.
+
+In the above example:
+
+* Spring creates the `UserRepository` object.
+* Spring creates the `UserService` object.
+* Spring automatically injects the `UserRepository` into the `UserService` constructor.
+
+This process is called **Dependency Injection (DI)**.
+
+---
+
+## Why Use Dependency Injection?
+
+Dependency Injection makes applications:
+
+* ✅ Loosely coupled
+* ✅ Easier to test
+* ✅ Easier to maintain
+* ✅ Easier to extend and modify
+
+---
+
+## Key Takeaway
+
+> **Dependency Injection (DI) is a design pattern in which Spring automatically provides the required dependencies to a class, instead of the class creating those dependencies itself.**
+
