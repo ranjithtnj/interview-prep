@@ -87,3 +87,63 @@ This allows developers to focus on **business logic** rather than object creatio
 ## Key Takeaway
 
 > **Spring reduces application complexity by automatically creating, managing, and connecting objects, making applications easier to develop, test, and maintain.**
+
+
+# 3. How Does Spring Work?
+
+## IoC (Inversion of Control)
+
+Spring works using an **IoC (Inversion of Control) Container**.
+
+### What is IoC?
+
+**IoC** stands for **Inversion of Control**.
+
+**Simple meaning:**
+
+Instead of you creating and managing objects, **Spring creates, manages, and provides them whenever they are needed**.
+
+---
+
+## How Does It Work?
+
+When Spring starts the application, it:
+
+1. Scans the project for Spring annotations such as `@Component`, `@Service`, `@Repository`, and `@Controller`.
+2. Creates objects for those classes.
+3. Stores and manages those objects inside the **IoC Container**.
+4. Injects them into other classes whenever required.
+
+---
+
+## Example
+
+```java
+@Service
+public class UserService {
+
+}
+```
+
+### What happens here?
+
+* `@Service` tells Spring that `UserService` is a Spring-managed class.
+* During application startup, Spring detects the `@Service` annotation.
+* Spring creates an object of `UserService`.
+* The object is stored inside the **IoC Container**.
+* Whenever another class needs `UserService`, Spring provides the same managed object.
+
+---
+
+## What is a Spring Bean?
+
+Any object that is **created, managed, and maintained by the Spring IoC Container** is called a **Spring Bean**.
+
+In the above example, the `UserService` object is a **Spring Bean**.
+
+---
+
+## Key Takeaway
+
+> **Spring works by using the IoC Container to automatically create, manage, and inject objects (Beans), reducing manual object creation and making applications easier to maintain.**
+
